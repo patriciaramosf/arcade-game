@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>2D Game</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="wrapper">
+        <section id="gameIntro">
+            <h1 class="title">Game title</h1>
+        </section>
+        <section id="gameBoard">
+            <canvas id="canvas" width='800' height='500'></canvas>
+        </section>
+        <section id="gameButtons">
+            <div class="buttons">
+                <button id="btn-start" class="btn">start game</button>
+                <button id="btn-pause" class="btn">play/pause</button>
+                <button id="btn-instructions" class="btn">instructions</button>
+                <button id="btn-music" class="btn">music</button>
+            </div>
+        </section>
+    </div>
+    <script src="./js/character.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
