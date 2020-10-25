@@ -9,7 +9,7 @@
 #canvas{
     border:2px solid purple;
     border-style: outset;
-    background-image: url('../img/background_game2.jpeg');
+    /* background-image: url('../img/background_game2.jpeg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -1,7 +1,8 @@
 let currentGame;
 let currentCharacter;
 let obstaclesFrequency = 0;
-const canvas = document.getElementById('canvas').getContext('2d');
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d')
 const gameBoard = document.getElementById('gameBoard');
 const gameIntro = document.getElementById('gameIntro');
 gameBoard.style.display = 'none'
@@ -9,8 +10,17 @@ gameBoard.style.display = 'none'
 document.getElementById('btn-start').onclick = () => startGame();
 
 document.onkeydown = (e) => {
-    let whereToGo = e.key;
+    let whereToGo = e.keyCode;
     currentGame.character.moveCharacter(whereToGo);
+}
+
+const canvasBackground = new Background (canvas, ctx);
+
+function updateCanvas(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    canvasBackground.draw();
+    currentGame.character.drawCharacter();
+    requestAnimationFrame(updateCanvas)
 }
 
 function startGame(){
@@ -21,8 +31,4 @@ function startGame(){
     currentGame.character = currentCharacter;
     currentGame.character.drawCharacter();
     updateCanvas();
-}
-function updateCanvas(){
-    canvas.clearRect(0, 0, 500, 600);
-    currentGame.character.drawCharacter();
 }
